@@ -4,7 +4,7 @@ metadata:
   name: mysample-ingress
   namespace: sample-app
   annotations:
-    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.class: "public"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
@@ -17,4 +17,4 @@ spec:
           service:
             name: mysample-service
             port: 
-              number: 80
+              number: 8080

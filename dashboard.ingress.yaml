@@ -2,18 +2,20 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: kubernetes-dashboard
+  namespace: kube-system
   annotations:
+    kubernetes.io/ingress.class: "public"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     nginx.ingress.kubernetes.io/rewrite-target: /
     # cert-manager.io/issuer: clusterissuer-le
 spec:
-  ingressClassName: nginx
+  # ingressClassName: nginx
   # tls:
   #   - hosts:
   #       - test-cluster-dashboard.wildwolf.name
   #     secretName: certificate-prod-dashboard
   rules:
-    - host: kube.local
+    - host: kube-dash.local
       http:
         paths:
           - pathType: "Prefix"

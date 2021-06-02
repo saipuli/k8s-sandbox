@@ -19,7 +19,7 @@ spec:
       - name: mysample
         image: microsoft/dotnet-samples:aspnetapp
         ports:
-          - containerPort: 8080
+          - containerPort: 80
         resources:
           requests:
             memory: "64Mi"
